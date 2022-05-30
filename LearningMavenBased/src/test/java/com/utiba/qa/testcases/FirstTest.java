@@ -2,6 +2,7 @@ package com.utiba.qa.testcases;
 
 import org.apache.juneau.json.JsonSerializer;
 import org.apache.juneau.serializer.SerializeException;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.utiba.qa.pojos.TestPojo;
@@ -10,9 +11,32 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 import io.restassured.specification.RequestSpecification;
 
 public class FirstTest {
+	
+	
+@BeforeClass
+
+public void setup() {
+	Connection c = null;
+    try {
+       Class.forName("org.postgresql.Driver");
+       c = DriverManager
+          .getConnection("jdbc:postgresql://localhost:5432/postgres",
+          "postgres", "admin");
+    } catch (Exception e) {
+       e.printStackTrace();
+       System.err.println(e.getClass().getName()+": "+e.getMessage());
+       System.exit(0);
+    }
+    System.out.println("Opened database successfully");
+ }
+
 
 @Test
 public void CreateUser() {
