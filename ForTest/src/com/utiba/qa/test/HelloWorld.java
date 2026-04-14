@@ -28,7 +28,7 @@ public class HelloWorld {
 	       System.err.println(e.getClass().getName()+": "+e.getMessage());
 	       System.exit(0);
 	    }
-	    System.out.println("Opened database successfully");
+	    System.out.println("Openedd database successfully");
 	    
 	    
 	    stmt = c.createStatement();

@@ -13,6 +13,7 @@ public class TestPojo {
 		this.gender = gender;
 		this.email = email;
 		this.status = status;
+		System.out.println("hello Java");
 	}
 
 	public String getName() {
