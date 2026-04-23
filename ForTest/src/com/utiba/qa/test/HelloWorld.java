@@ -46,7 +46,7 @@ public class HelloWorld {
 	    	
 	    	int employeeID = rs.getInt("ID");
 
-	         String  empName = rs.getString("Name");
+	         String  empName = rs.getString("Name1");
 
 	         String empDepartment  = rs.getString("Department");
 	         
